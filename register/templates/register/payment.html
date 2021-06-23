@@ -1,0 +1,21 @@
+<head>
+    <title>Cart</title>
+</head>
+<table align="center" style="padding: 12px;">
+    <tr>
+        <th colspan="4" style="font-size: 20px; text-align: center; background-color: rgba(245, 150, 100, 100); color: white;">Cart Items are:-</th>
+    </tr>
+    {%for item in cart_items%}
+        <tr>
+            <td>{{item.cart_item}}</td>
+            <td>({{item.item_qty}} - {{item.item_num}})</td>
+            <td> = {{item.item_price}}</td>
+        </tr>
+    {%endfor%}
+    <tr>
+        <td colspan="4" style="font-size: 20px; text-align: center; background-color: rgba(245, 150, 100, 100); color: white;">Total payment amount = {{totalamt}}</td>
+    </tr>
+</table>
+	</form>
+</body>
+</html>>

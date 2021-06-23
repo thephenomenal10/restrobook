@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Register</title>
+</head>
+<body>
+	<form action="{%url 'menu'%}" method="POST" style="margin-top: 2em;">
+		{%csrf_token%}
+		<table align="center" style="background-color: rgba(245, 150, 100, 100); padding: 12px;">
+			<tr style="margin: 2em;">
+				<th>Table No.</th>
+				<td><input type="number" name="tablenum" placeholder="00" style="border-radius: 12px; background-color: lightgreen; text-align: center;"></td>
+			</tr>
+			<tr>
+				<th>Phone No.</th>
+				<td><input type="number" name="phonenum" style="border-radius: 12px; background-color: lightblue; text-align: center;"></td>
+			</tr>
+			<tr>
+				<th><pre>         </pre></th>
+				<td><input type="submit" style="background-color: maroon; color: white; padding: 4px 12px; border-radius: 15px; display: block;" value="Continue" name="submit"></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

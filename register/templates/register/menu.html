@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Menu</title>
+</head>
+<body>
+	<form action="{% url 'add_to_cart' table_id %}" method="POST">
+		{%csrf_token%}
+		<table align="center" style="background-color: rgba(245, 150, 100, 100); padding: 12px;">
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<!-- <tr>
+				<th colspan='3' id='headermenu' style="font-size: 20px; text-align: center; background-color: rgba(245, 150, 100, 100); color: white;">Snacks</th>
+			</tr> -->
+			<tr>
+				<td>Select the category</td>
+				<td><select name="category" style="border-radius: 12px; background-color: lightgreen; text-align: center;">
+					<option></option>
+					<option>Snacks</option>
+					<!-- Add more options of the category-->
+				</select></td>
+			</tr>
+			<tr>
+				<td>Select the dish</td>
+				<td><select name="dish_name" style="border-radius: 12px; background-color: lightblue; text-align: center;"></>
+					<option></option>
+					{%for item in snacks%}
+						<option>{{item.dish_name}}</option>
+					{%endfor%}
+				</select></td>
+			</tr>
+			<tr>
+				<td>Select the quantity</td>
+				<td><select name="item_qty" style="border-radius: 12px; background-color: lightblue; text-align: center;"></>
+						<option>Half</option>
+						<option>Full</option>
+				</select></td>
+			</tr>
+			<tr>
+				<td>Enter number of servings</td>
+				<td><input type="number" name="item_num" value="item_num" style="border-radius: 12px; background-color: lightgreen; text-align: center;"></td>
+			</tr>
+			<tr>
+				<td><input type="submit" name="add_to_cart" value="add to cart" style="background-color: green; color: white; border-radius: 10px;"></td>
+			</tr>
+			<tr><td>
+			<button id="go" style="background-color: maroon; color: white; padding: 6px 20px; border-radius: 15px; display: block; width: 200px; margin: 7em;"><a href='/payment/{{table_id}}' style="color: white; text-decoration: none;">Go to cart</a></button></td></tr>
+		</table>
+	</form>
+</body>
+</html>
